@@ -1,0 +1,26 @@
+{
+  "name": "frame-zoomer",
+  "version": "0.1.0",
+  "authors": [
+    "Gutsulyak Dmitry <doberq@gmail.com>"
+  ],
+  "description": "FrameZoomer lets to zoom up certain portions of an image.",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "zoom",
+    "image",
+    "frame",
+    "image portions",
+    "scaling"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
