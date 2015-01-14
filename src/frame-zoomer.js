@@ -1,3 +1,11 @@
+/**
+ * FrameZoomerJS JavaScript Library v0.1.0
+ * https://github.com/dmgts/frame-zoomer
+ *
+ * Copyright 2015 Gutsulyak Dmitry
+ * Released under the MIT license
+ */
+
 // Thanks to Paul Irish for this polyfill (https://gist.github.com/paulirish/1579671)
 (function() {
     "use strict";

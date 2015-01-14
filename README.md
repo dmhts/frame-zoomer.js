@@ -1,10 +1,17 @@
-# FrameZoomer
-FrameZoomer lets to zoom up certain portions of an image. It doesn't need any dependencies and it will be especially usefull if you need to zoom in and highlight some recognized or pre-defined parts of an image with animation.
+# FrameZoomerJS
+FrameZoomer allows to zoom in certain portions of an image. It doesn't require any dependencies and it will be especially useful if you need to zoom in and highlight some recognized or pre-defined parts of an image with animation.
 
 You are welcome to see the <a href="http://dmgts.github.io/frame-zoomer/">demo</a>.
 
 ## Browser support
-Tested and working: Chrome, FF3.6+, IE9+, Safari 6+
+FrameZoomerJS has been successfully tested in the following browsers: 
+* Chrome 
+* FF3.6+ 
+* IE9+ 
+* Safari 5+ 
+* Opera 12+
+* Mobile Safari (iOS 6+)
+* Android 2.3+ 
 
 ## Getting started
 ####1. Install with Bower: 
