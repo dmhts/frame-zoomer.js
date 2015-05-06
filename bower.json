@@ -1,6 +1,7 @@
 {
   "name": "frame-zoomer",
   "version": "0.1.1",
+  "main": "src/frame-zoomer.js",
   "authors": [
     "Gutsulyak Dmitry <doberq@gmail.com>"
   ],
