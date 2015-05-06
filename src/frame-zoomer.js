@@ -75,7 +75,7 @@
             animationDuration: 1000,
             zoomWindow: {
                 width: "100%",
-                height: "100%"
+                height: "depends"
             },
             frame: {
                 padding: 10,
@@ -378,11 +378,11 @@
      * @private
      */
     FrameZoomer.prototype._checkImageBoundaries = function(){
-        if(this.getImgNaturalWidth() <= this.zoomWindow.offsetWidth) {
+        if(this.getImgNaturalWidth() < this.zoomWindow.offsetWidth) {
             throw new Error("The width of the original image is less than width of the zoom window. Please increase the zoomRatio value.");
         }
 
-        if(this.getImgNaturalHeight() <= this.zoomWindow.offsetHeight) {
+        if(this.getImgNaturalHeight() < this.zoomWindow.offsetHeight) {
             throw new Error("The height of the original image is less than height of the zoom window. Please increase the zoomRatio value.");
         }
     };
@@ -393,16 +393,15 @@
      * @private
      */
     FrameZoomer.prototype._init = function(){
+        this.img.style.width = "100%";
+        
         this.zoomWindow.setAttribute("id", "zoomWindow");
         this.zoomWindow.style.width = typeof this.options.zoomWindow.width === 'string' ? this.options.zoomWindow.width : this.addPx(this.options.zoomWindow.width);
-        this.zoomWindow.style.height = typeof this.options.zoomWindow.height === 'string' ? this.options.zoomWindow.height : this.addPx(this.options.zoomWindow.height);
         this.zoomWindow.style.overflow = "hidden";
         this.zoomWindow.style.position = "relative";
 
         this.imgWrapper.setAttribute("id", "wrapper");
         this.imgWrapper.style.position = "relative";
-
-        this.img.style.width = "100%";
 
         this.frame.style.background = this.options.frame.background;
         this.frame.style.opacity = this.options.frame.opacity;
@@ -413,6 +412,16 @@
         this.wrap(this.imgWrapper, this.img);
         this.wrap(this.zoomWindow, this.imgWrapper);
         this.imgWrapper.appendChild(this.frame);
+        
+        // Set a zoom window height after an image has been fit by a width in order to correct use an overflow property.
+        if(typeof this.options.zoomWindow.height === 'string') {
+            switch(this.options.zoomWindow.height) {
+                case 'depends': this.zoomWindow.style.height = this.addPx(this.img.offsetHeight); break;
+                default: this.zoomWindow.style.height = this.options.zoomWindow.height;
+            }
+        } else {
+			this.zoomWindow.style.height = this.addPx(this.options.zoomWindow.height);
+		}
 
         this._checkImageBoundaries();
 

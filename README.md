@@ -42,8 +42,7 @@ image.src = "/img/image.jpg";
 frameZoomer = new FrameZoomer({
     image: window.document.getElementById('image-id') || image,
     zoomWindow: {
-        width: 500,
-        height: 500
+        width: 500
     }
 });
 ```
@@ -62,8 +61,8 @@ Available options and their defaults are:
   zoomRatio: 1,            // The zooming ratio
   animationDuration: 1500, // Duration of animation in miliseconds
   zoomWindow: {            // Options of the zoom window
-    width: "100%",         // The width of the zoom window in percents or pixels. If specified in px then it has to be less than image.naturalWidth.
-    height: "100%"         // The height of the zoom window in percents or pixels. If specified in px then it has to be less than image.naturalHeight.
+    width: "100%",         // Width of the zoom window in percents or pixels. If specified in px then it has to be less than image.naturalWidth.
+    height: "depends"      // A default value is "depends", it means that height automatically depends on width. Height of the zoom window also can be in percents or pixels. If specified in px then it has to be less than image.naturalHeight.
   },
   frame: {                 // Options of the frame
     padding: 10            // in pixels
